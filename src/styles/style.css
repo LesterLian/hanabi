@@ -401,3 +401,22 @@ button {
   }
 }
 
+/* Login Component Customization */
+
+.verification-input input {
+  max-width: 3.125rem;
+  max-height: 3.125rem;
+  margin-left: 0.375rem;
+  border-radius: 0.375rem !important;
+  font-size: 2rem !important;
+  font-family: SF Pro Text, Arial, sans-serif !important;
+  line-height: 1.3;
+}
+
+.verification-input input:first-child {
+  margin-left: 0;
+}
+
+.verification-input input:nth-child(4) {
+  margin-left: 12px;
+}

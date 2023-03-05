@@ -8,7 +8,9 @@ import LanguageSelector, { Languages } from "~/components/languageSelector";
 import Rules from "~/components/rules";
 import Button, { ButtonSize } from "~/components/ui/button";
 import Txt, { TxtSize } from "~/components/ui/txt";
+import useUser from "~/hooks/auth";
 import useLocalStorage from "~/hooks/localStorage";
+import Login from "~/pages/login";
 
 export default function Home() {
   const router = useRouter();
@@ -17,6 +19,7 @@ export default function Home() {
   const [playerId] = useLocalStorage("playerId", null);
   const rulesRef = useRef<HTMLDivElement>();
   const fireworksRef = useRef();
+  const { auth, loading, login } = useUser();
 
   const lastGame = gameId && playerId ? { gameId } : null;
 
@@ -76,7 +79,10 @@ export default function Home() {
           <Txt size={TxtSize.LARGE} value={t("hanab", "Hanab")} />
         </div>
         <span className="tc lavender">{t("tagline", "Play the Hanab game online with friends!")}</span>
+
         <main className="flex flex-column mt5">
+          {!loading && auth ? (
+            <>
           <Button
             primary
             className="mb4"
@@ -119,6 +125,10 @@ export default function Home() {
               {t("learnHanabTime", "~5 mn")}
             </Txt>
           </Button>
+            </>
+          ) : (
+            <Login className="mb4" login={login} />
+          )}
 
           <span
             className="flex flex-column items-center link white pointer mt4"
