@@ -110,9 +110,9 @@ function Meta() {
         {t("hanab")} · {t("tagline")}
       </title>
 
-      <link href="/static/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-      <link href="/static/hanab-192.png" rel="apple-touch-icon" />
-      <link href="/static/manifest.json" rel="manifest" />
+      <link href={process.env.basePath + "/static/favicon.ico"} rel="shortcut icon" type="image/x-icon" />
+      <link href={process.env.basePath + "/static/hanab-192.png"} rel="apple-touch-icon" />
+      <link href={process.env.basePath + "/static/manifest.json"} rel="manifest" />
       <meta content={tagline} name="Description" />
 
       <meta content="hanab.cards" property="og:title" />

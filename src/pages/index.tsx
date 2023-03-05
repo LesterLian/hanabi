@@ -72,7 +72,7 @@ export default function Home() {
             <Image
               alt={t("landingImageAlt", "Hanabcards game online logo")}
               height={256}
-              src={"/static/hanab.png"}
+              src={process.env.basePath + "/static/hanab.png"}
               width={256}
             />
           </div>
@@ -83,48 +83,48 @@ export default function Home() {
         <main className="flex flex-column mt5">
           {!loading && auth ? (
             <>
-          <Button
-            primary
-            className="mb4"
-            id="create-room"
-            size={ButtonSize.LARGE}
-            text={t("createRoom", "Create a room")}
-            onClick={() => router.push("/new-game")}
-          />
-          <Button
-            className="mb4"
-            id="join-room"
-            size={ButtonSize.LARGE}
-            text={t("joinRoom", "Join a room")}
-            onClick={() => router.push("/join-game")}
-          />
-          {lastGame && (
-            <Button
-              className="mb4"
-              id="join-room"
-              size={ButtonSize.LARGE}
-              text={t("rejoinGame", "Rejoin game")}
-              onClick={() =>
-                router.replace({
-                  pathname: "/play",
-                  query: lastGame,
-                })
-              }
-            />
-          )}
-          <Button
-            className="mb4"
-            id="tutorial"
-            size={ButtonSize.LARGE}
-            onClick={() => {
-              router.push("/learn");
-            }}
-          >
-            {t("learnHanab", "Learn")}
-            <Txt className="ml2" size={TxtSize.XXSMALL}>
-              {t("learnHanabTime", "~5 mn")}
-            </Txt>
-          </Button>
+              <Button
+                primary
+                className="mb4"
+                id="create-room"
+                size={ButtonSize.LARGE}
+                text={t("createRoom", "Create a room")}
+                onClick={() => router.push("/new-game")}
+              />
+              <Button
+                className="mb4"
+                id="join-room"
+                size={ButtonSize.LARGE}
+                text={t("joinRoom", "Join a room")}
+                onClick={() => router.push("/join-game")}
+              />
+              {lastGame && (
+                <Button
+                  className="mb4"
+                  id="join-room"
+                  size={ButtonSize.LARGE}
+                  text={t("rejoinGame", "Rejoin game")}
+                  onClick={() =>
+                    router.replace({
+                      pathname: "/play",
+                      query: lastGame,
+                    })
+                  }
+                />
+              )}
+              <Button
+                className="mb4"
+                id="tutorial"
+                size={ButtonSize.LARGE}
+                onClick={() => {
+                  router.push("/learn");
+                }}
+              >
+                {t("learnHanab", "Learn")}
+                <Txt className="ml2" size={TxtSize.XXSMALL}>
+                  {t("learnHanabTime", "~5 mn")}
+                </Txt>
+              </Button>
             </>
           ) : (
             <Login className="mb4" login={login} />

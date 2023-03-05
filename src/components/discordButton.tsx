@@ -10,7 +10,7 @@ export default function DiscordButton() {
       target="_blank"
       title="Discord"
     >
-      <Image alt="Discord" height={38} src="/static/discord.svg" width={112} />
+      <Image alt="Discord" height={38} src={process.env.basePath + "/static/discord.svg"} width={112} />
       <style jsx>
         {`
           .discord-button {

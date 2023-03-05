@@ -377,7 +377,12 @@ export default function Learn() {
       <HomeButton className="absolute top-1 right-1 z-2" />
 
       <div className="fixed top-0 right-0 w4 h4 ma4 o-50 ">
-        <Image alt="Hanab cards game online" height={256} src="/static/hanab.png" width={256} />
+        <Image
+          alt="Hanab cards game online"
+          height={256}
+          src={process.env.basePath + "/static/hanab.png"}
+          width={256}
+        />
       </div>
 
       <div className="relative flex items-center h-90 w-90 w-50-l center">

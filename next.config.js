@@ -10,7 +10,8 @@ const withPlugins = require("next-compose-plugins");
 
 const config = [
   {
-    target: "serverless",
+    basePath: "",
+    env: { basePath: "" },
     i18n: {
       locales: ["en", "fr", "es", "it", "nl", "ru", "pt", "de", "sk", "zh"],
       defaultLocale: "en",

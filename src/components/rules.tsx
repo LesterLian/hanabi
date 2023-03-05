@@ -28,16 +28,31 @@ export default function Rules(props: Props) {
         )}
 
         <div className="absolute top-0 right-0 w4 h4 ma4 o-50 dn db-l">
-          <Image alt="Hanab cards game online" height={256} src={"/static/hanab.png"} width={256} />
+          <Image
+            alt="Hanab cards game online"
+            height={256}
+            src={process.env.basePath + "/static/hanab.png"}
+            width={256}
+          />
         </div>
 
         <div className="flex justify-center mb4 mb5-l">
           <div className="w-75 w-50-l ba b--yellow br3 overflow-hidden">
             <div className="dn db-l">
-              <Image alt="Game screenshot" height={1570} src={"/static/screenshot-desktop.png"} width={1816} />
+              <Image
+                alt="Game screenshot"
+                height={1570}
+                src={process.env.basePath + "/static/screenshot-desktop.png"}
+                width={1816}
+              />
             </div>
             <div className="db dn-l">
-              <Image alt="Game screenshot" height={1498} src={"/static/screenshot-mobile.png"} width={1024} />
+              <Image
+                alt="Game screenshot"
+                height={1498}
+                src={process.env.basePath + "/static/screenshot-mobile.png"}
+                width={1024}
+              />
             </div>
           </div>
         </div>
